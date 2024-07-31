@@ -43,7 +43,7 @@ function RecipeDetails() {
                         <tbody>
                             {recipeDetails.angleWidth?.map((items, index) => {
                                 return <tr>
-                                    <td key={1}>{items[0]}</td>
+                                    <td key={1}>{items[0]} :</td>
                                     <td key={2} >{items[1]}</td>
                                     <td key={3} >{items[2]}</td>
                                 </tr>

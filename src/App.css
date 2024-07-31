@@ -66,16 +66,17 @@
   font-weight: 600;
 }
 
-.shift-elements table,
+.shift-elements 
+table,
 th,
 td {
-  border: 1px solid black;
-  border-collapse: collapse;
+  /* border: 1px solid black; */
+  /* border-collapse: collapse; */
+  padding: 10px;
 }
 
+
 /* Recipe Details CSS */
-
-
 
 .recipe-details-heading {
   display: block;
@@ -116,6 +117,9 @@ td {
   font-weight: 500;
 }
 
-.recipe-details-table th, td {
-  padding: 15px;
+.recipe-details-table  th, td {
+  padding: 20px;
+  border: none;
+  text-align: center;
 }
+
