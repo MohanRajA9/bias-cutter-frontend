@@ -5,7 +5,7 @@ function ShiftDetails() {
     const [shiftDetails, setShiftDetails] = useState({})
     useEffect(() => {
         try {
-            axios.get(`${URL}/shift-details/1`)
+            axios.get(`${URL}/shift-details/details/1`)
                 .then((res) => {
                     console.log(res)
                     setShiftDetails(res.data)
@@ -14,7 +14,7 @@ function ShiftDetails() {
             console.error(error.message)
         }
     }, [])
-    console.log(shiftDetails.targetAchieved)
+    console.log(shiftDetails.targetAchieve)
     return (
         <div className='shift-details' >
 
@@ -36,9 +36,8 @@ function ShiftDetails() {
                 </thead>
                     <tbody>
                         <tr>
-                        
-                            <td>{shiftDetails.plan}</td>
-                            <td>{shiftDetails.complete}</td>
+                            <td id='plan' >{shiftDetails.plan}</td>
+                            <td id='complete' >{shiftDetails.complete}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -46,7 +45,7 @@ function ShiftDetails() {
 
             <div className='shift-elements' >
                 <header>Target Achieved</header>
-                <p>{shiftDetails.targetAchieve}%</p>
+                <p id='targetAchieve' >{shiftDetails.targetAchieve}%</p>
             </div>
 
             <div className='shift-elements' >

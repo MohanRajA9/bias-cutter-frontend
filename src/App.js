@@ -3,6 +3,7 @@ import './App.css';
 import TVSEurogrip from './images/TVSEurogrip.jpg';
 import tvsMobility from './images/tvsMobility.png';
 import ShiftDetails from './components/ShiftDetails';
+import RecipeDetails from './components/RecipeDetails';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         </div>
       </nav>
       <ShiftDetails/>
+      <RecipeDetails/>
     </div>
   );
 }
