@@ -4,10 +4,12 @@ import TVSEurogrip from './images/TVSEurogrip.jpg';
 import tvsMobility from './images/tvsMobility.png';
 import ShiftDetails from './components/ShiftDetails';
 import RecipeDetails from './components/RecipeDetails';
+import Visualization from './components/Visualization';
 
 function App() {
   return (
     <div className="App">
+
       <nav className="navbar bg-body-tertiary biasnavbar">
         <div className="container-fluid">
           <img src={TVSEurogrip} alt='company logo' />
@@ -15,8 +17,14 @@ function App() {
           <img src={tvsMobility} alt='company logo' />
         </div>
       </nav>
-      <ShiftDetails/>
-      <RecipeDetails/>
+
+      <div className='whole-content' >
+
+        <ShiftDetails />
+        <RecipeDetails />
+        <Visualization />
+      </div>
+
     </div>
   );
 }
