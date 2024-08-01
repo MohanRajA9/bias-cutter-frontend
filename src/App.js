@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import TVSEurogrip from './images/TVSEurogrip.jpg';
 import tvsMobility from './images/tvsMobility.png';
@@ -19,7 +18,6 @@ function App() {
       </nav>
 
       <div className='whole-content' >
-
         <ShiftDetails />
         <RecipeDetails />
         <Visualization />

@@ -30,8 +30,8 @@ function ShiftDetails() {
             <div className='shift-elements' >
                 <table><thead>
                     <tr>
-                        <th>Plan</th>
-                        <th>Complete</th>
+                        <th style={{fontWeight:800, fontSize:"large"}} >Plan</th>
+                        <th style={{fontWeight:800, fontSize:"large"}} >Complete</th>
                     </tr>
                 </thead>
                     <tbody>
@@ -50,12 +50,12 @@ function ShiftDetails() {
 
             <div className='shift-elements' >
                 <header>Total FAB Meters</header>
-                <p>{shiftDetails.totalFabMeters}</p>
+                <p style={{marginTop:"30px", textAlign:"center"}} >{shiftDetails.totalFabMeters}</p>
             </div>
 
             <div className='shift-elements' >
                 <header>Machine</header>
-                <p>{shiftDetails.machine}</p>
+                <p style={{marginTop:"30px", textAlign:"center"}} >{shiftDetails.machine}</p>
             </div>
 
         </div>

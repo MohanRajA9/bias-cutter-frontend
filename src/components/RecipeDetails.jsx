@@ -23,12 +23,28 @@ function RecipeDetails() {
 
             <div className='recipe-details-contents' >
 
-                <div className='recipe-details-elements' >
-                    <p><span>RECIPE NAME    :</span>{recipeDetails.recipeName}</p>
-                    <p><span>SAP NAME       :</span>{recipeDetails.SAPname}</p>
-                    <p><span>FABRIC CODE    :</span>{recipeDetails.fabricCode}</p>
-                    <p><span>CUTTING WIDTH  :</span>{recipeDetails.cuttingWidth}</p>
-                    <p><span>CUTTING ANGLE  :</span>{recipeDetails.cuttingAngle}</p>
+                <div className='recipe-details-elements' style={{display:"flex"}}>
+                    <div>
+                        <p><span>RECIPE NAME    </span></p>
+                        <p><span>SAP NAME       </span></p>
+                        <p><span>FABRIC CODE    </span></p>
+                        <p><span>CUTTING WIDTH  </span></p>
+                        <p><span>CUTTING ANGLE  </span></p>
+                    </div>
+                    <div>
+                        <p>:</p>
+                        <p>:</p>
+                        <p>:</p>
+                        <p>:</p>
+                        <p>:</p>
+                    </div>
+                    <div>
+                        <p><span></span>{recipeDetails.recipeName}</p>
+                        <p><span></span>{recipeDetails.SAPname}</p>
+                        <p><span></span>{recipeDetails.fabricCode}</p>
+                        <p><span></span>{recipeDetails.cuttingWidth}</p>
+                        <p><span></span>{recipeDetails.cuttingAngle}</p>
+                    </div>
                 </div>
 
                 <div className='recipe-details-table' >
@@ -36,16 +52,16 @@ function RecipeDetails() {
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>ANGLE</th>
-                                <th>WIDTH</th>
+                                <th id='angle' >ANGLE</th>
+                                <th id='width' >WIDTH</th>
                             </tr>
                         </thead>
                         <tbody>
                             {recipeDetails.angleWidth?.map((items, index) => {
                                 return <tr>
-                                    <td key={1}>{items[0]} :</td>
-                                    <td key={2} >{items[1]}</td>
-                                    <td key={3} >{items[2]}</td>
+                                    <td id='cut' key={1} >{items[0]} :</td>
+                                    <td id='angle' key={2} >{items[1]}</td>
+                                    <td id='width' key={3} >{items[2]}</td>
                                 </tr>
                             })}
                         </tbody>
