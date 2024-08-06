@@ -4,8 +4,8 @@ import { URL } from '../global'
 
 function RecipeDetails() {
 
-    // const [keyforAngleWidth, setKeyforAngleWidth] = useState([1001,1002,1003])
     const [recipeDetails, setRecipeDetails] = useState({})
+    let [shiftNo, setShiftNo] = useState(1)
 
     function fetchRecipeDetails(shiftNo) {
         try {
@@ -17,13 +17,20 @@ function RecipeDetails() {
         } catch (error) { console.error(error.message) }
     }
 
+    useEffect(()=>{
+        const MyInterval = setInterval(()=>{
+            setShiftNo(shiftNo+=1)
+            // console.log(shiftNo)
+        },10000)
+        setTimeout(()=>{
+            clearInterval(MyInterval)
+            // console.log("interval Cleared")
+        },50000)
+    },[])
+
     useEffect(() => {
-        fetchRecipeDetails(1)
-    }, [])
-    // console.log(recipeDetails.firstCut1)
-    
-
-
+        fetchRecipeDetails(shiftNo)
+    }, [shiftNo])
 
     return (
         <div className='recipe-details' >

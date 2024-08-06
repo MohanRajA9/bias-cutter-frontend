@@ -3,6 +3,7 @@ import { URL } from '../global';
 import axios from 'axios';
 function ShiftDetails() {
     const [shiftDetails, setShiftDetails] = useState({})
+    let [shiftNo, setShiftNo] = useState(1)
     
 
     function fetchShiftDetails(shiftNo) {
@@ -18,27 +19,22 @@ function ShiftDetails() {
     }
 
     useEffect(() => {
-        fetchShiftDetails(1)
+        const MyInterval = setInterval(()=>{
+            setShiftNo(shiftNo+=1)
+            // console.log(shiftNo)
+        },10000)
+
+        setTimeout(()=>{
+            clearInterval(MyInterval)
+            // console.log("this is after fifty seconds")
+        },50000)
     }, [])
 
+    useEffect(()=>{
+        fetchShiftDetails(shiftNo)
+    },[shiftNo])
+
     // console.log(shiftDetails.targetAchieve)
-
-    // setTimeout(() => {
-    //     console.log("after two seconds")
-    //     fetchShiftDetails(2)
-    // }, 5000)
-
-
-    //    const shiftInterval = setInterval(()=>{
-//         fetchShiftDetails(2)
-//         console.log("two seconds")
-//     },2000)
-
-//     setTimeout(()=>{
-//         clearInterval(shiftInterval) 
-//     },10000)
-
-    
 
     return (
         <div className='shift-details' >
