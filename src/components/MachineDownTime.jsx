@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
+import { URL } from '../global';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -10,6 +11,7 @@ import {
     Tooltip,
     Legend
 } from 'chart.js'
+import axios from 'axios';
 
 ChartJS.register(
     CategoryScale,
@@ -22,6 +24,36 @@ ChartJS.register(
 )
 
 function MachineDownTime() {
+    const [array, setArray] = useState([])
+    let [shiftNo, setShiftNo] = useState(1)
+
+    function fetchMachineDownTime(shiftNo) {
+        try {
+            axios.get(`${URL}/machine-down-time/get-dowm-time/${shiftNo}`)
+            .then((res)=>{
+                setArray(res.data.machineDownTime)
+                console.log(res.data.machineDownTime)
+            })
+        }
+        catch (error) {
+            console.error(error.message)
+        }
+    }
+
+    useEffect(()=>{
+        fetchMachineDownTime(shiftNo)
+    },[shiftNo])
+
+    useEffect(()=>{
+        const myInterval = setInterval(()=>{
+            setShiftNo(shiftNo+=1)
+            console.log(shiftNo)
+        },10000)
+        setTimeout(()=>{
+            clearInterval(myInterval)
+            console.log("interval cleared")
+        },70000)
+    },[])
 
     const options = {}
     const data = {
@@ -37,11 +69,11 @@ function MachineDownTime() {
         ],
         datasets: [
             {
-                label:"Down Time",
-                data:[0,0,5,0,25,0,5,0],
-                backgroundColor:"orange",
-                borderColor:"red",
-                borderWidth:1
+                label: "Down Time",
+                data: array,
+                backgroundColor: "orange",
+                borderColor: "red",
+                borderWidth: 1
             }
         ]
     }
