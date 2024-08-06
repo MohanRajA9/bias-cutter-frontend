@@ -182,6 +182,7 @@ td {
   text-align: center;
   color: pink;
   background-color: rgb(10, 116, 236);
+  border-radius: 15px;
 }
 
 
@@ -196,6 +197,7 @@ td {
   text-align: center;
   color: pink;
   background-color: rgb(10, 116, 236);
+  border-radius: 15px;
 }
 
 .machineDownTime {
@@ -212,6 +214,7 @@ td {
   text-align: center;
   color: pink;
   background-color: rgb(10, 116, 236);
+  border-radius: 15px;
 }
 
 .machineLossTime {

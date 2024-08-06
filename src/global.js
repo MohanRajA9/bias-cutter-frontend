@@ -1,2 +1,2 @@
-// export const URL = "https://bias-cutter-backend.onrender.com" 
-export const URL = "http://localhost:4000" 
+export const URL = "https://bias-cutter-backend.onrender.com" 
+// export const URL = "http://localhost:4000" 
