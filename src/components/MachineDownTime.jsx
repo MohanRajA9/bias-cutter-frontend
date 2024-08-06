@@ -55,21 +55,31 @@ function MachineDownTime() {
         },70000)
     },[])
 
-    const options = {}
+    const options = {
+        responsive:true,
+        plugins:{
+            legend:{
+                position:"bottom"
+            }
+        }
+    }
+
     const data = {
         labels: [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8"
+            "1st Hour",
+            "2nd Hour",
+            "3rd Hour",
+            "4th Hour",
+            "5th Hour",
+            "6th Hour",
+            "7th Hour",
+            "8th Hour",
+            "9th Hour",
+            "10th Hour"
         ],
         datasets: [
             {
-                label: "Down Time",
+                label: "Down Time Minutes",
                 data: array,
                 backgroundColor: "orange",
                 borderColor: "red",

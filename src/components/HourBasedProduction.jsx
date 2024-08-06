@@ -9,7 +9,8 @@ import {
     PointElement,
     Title,
     Tooltip,
-    Legend
+    Legend,
+    plugins
 } from 'chart.js';
 import axios from 'axios';
 
@@ -58,25 +59,31 @@ function HourBasedProduction() {
         getHourDetails(shiftNo)
     },[shiftNo])
 
-    const options = {}
+    const options = {
+        responsive:true,
+        plugins:{
+            legend:{
+                position:"bottom"
+            }
+        }
+    }
 
     const data = {
         labels: [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"
-
+            "1st Hour",
+            "2nd Hour",
+            "3rd Hour",
+            "4th Hour",
+            "5th Hour",
+            "6th Hour",
+            "7th Hour",
+            "8th Hour",
+            "9th Hour",
+            "10th Hour"
         ],
         datasets: [
             {
-                label: "Completed",
+                label: "Work Completed",
                 data: array,
                 borderColor: "red"
             }

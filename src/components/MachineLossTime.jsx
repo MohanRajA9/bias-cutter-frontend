@@ -39,7 +39,14 @@ function MachineLossTime() {
         fetchMachineLossTime(shiftNo)
     }, [shiftNo])
 
-    const options = {}
+    const options = {
+        responsive:true,
+        plugins:{
+            legend:{
+                position:"bottom"
+            }
+        }
+    }
 
     const data = {
         labels: [
