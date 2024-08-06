@@ -50,8 +50,8 @@ function MachineLossTime() {
 
     const data = {
         labels: [
-            "Run Time",
-            "LossTime"
+            "Run Time in Hours",
+            "Loss Time in Hours"
         ],
         datasets: [
             {

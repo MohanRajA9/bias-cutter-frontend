@@ -52,7 +52,7 @@ function HourBasedProduction() {
         setTimeout(()=>{
             clearInterval(myInterval)
             // console.log("interval cleared")
-        },70000)
+        },80000)
     },[])
 
     useEffect(()=>{
@@ -77,9 +77,7 @@ function HourBasedProduction() {
             "5th Hour",
             "6th Hour",
             "7th Hour",
-            "8th Hour",
-            "9th Hour",
-            "10th Hour"
+            "8th Hour"
         ],
         datasets: [
             {
