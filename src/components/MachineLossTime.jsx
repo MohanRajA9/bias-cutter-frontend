@@ -16,7 +16,7 @@ function MachineLossTime() {
             axios.get(`${URL}/machine-loss-time/get-loss-time/${shiftNo}`)
                 .then((res) => {
                     setArray(res.data.machineLossTime)
-                    console.log(res.data.machineLossTime)
+                    // console.log(res.data.machineLossTime)
                 })
 
         } catch (error) {
@@ -27,11 +27,11 @@ function MachineLossTime() {
     useEffect(() => {
         const myInterval = setInterval(() => {
             setShiftNo(shiftNo += 1)
-            console.log(shiftNo)
+            // console.log(shiftNo)
         }, 10000)
         setTimeout(() => {
             clearInterval(myInterval)
-            console.log("interval Cleared")
+            // console.log("interval Cleared")
         }, 70000)
     }, [])
 
