@@ -32,7 +32,7 @@ function MachineDownTime() {
             axios.get(`${URL}/machine-down-time/get-dowm-time/${shiftNo}`)
             .then((res)=>{
                 setArray(res.data.machineDownTime)
-                console.log(res.data.machineDownTime)
+                // console.log(res.data.machineDownTime)
             })
         }
         catch (error) {
@@ -47,11 +47,11 @@ function MachineDownTime() {
     useEffect(()=>{
         const myInterval = setInterval(()=>{
             setShiftNo(shiftNo+=1)
-            console.log(shiftNo)
+            // console.log(shiftNo)
         },10000)
         setTimeout(()=>{
             clearInterval(myInterval)
-            console.log("interval cleared")
+            // console.log("interval cleared")
         },70000)
     },[])
 
