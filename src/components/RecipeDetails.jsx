@@ -3,17 +3,28 @@ import React, { useEffect, useState } from 'react'
 import { URL } from '../global'
 
 function RecipeDetails() {
+
+    // const [keyforAngleWidth, setKeyforAngleWidth] = useState([1001,1002,1003])
     const [recipeDetails, setRecipeDetails] = useState({})
-    useEffect(() => {
+
+    function fetchRecipeDetails(shiftNo) {
         try {
-            axios.get(`${URL}/recipe-details/details/1`)
+            axios.get(`${URL}/recipe-details/details/${shiftNo}`)
                 .then((res) => {
                     // console.log(res)
                     setRecipeDetails(res.data)
                 })
         } catch (error) { console.error(error.message) }
+    }
+
+    useEffect(() => {
+        fetchRecipeDetails(1)
     }, [])
-    console.log(recipeDetails)
+    // console.log(recipeDetails.firstCut1)
+    
+
+
+
     return (
         <div className='recipe-details' >
 
@@ -23,7 +34,7 @@ function RecipeDetails() {
 
             <div className='recipe-details-contents' >
 
-                <div className='recipe-details-elements' style={{display:"flex"}}>
+                <div className='recipe-details-elements' style={{ display: "flex" }}>
                     <div>
                         <p><span>RECIPE NAME    </span></p>
                         <p><span>SAP NAME       </span></p>
@@ -57,13 +68,29 @@ function RecipeDetails() {
                             </tr>
                         </thead>
                         <tbody>
-                            {recipeDetails.angleWidth?.map((items, index) => {
+                            {/* {recipeDetails.angleWidth?.map((items, index) => {
                                 return <tr>
-                                    <td id='cut' key={1} >{items[0]} :</td>
-                                    <td id='angle' key={2} >{items[1]}</td>
-                                    <td id='width' key={3} >{items[2]}</td>
+                                    <td id='cut' key={items[3]} >{items[0]} :</td>
+                                    <td id='angle' key={items[4]} >{items[1]}</td>
+                                    <td id='width' key={items[5]} >{items[2]}</td>
                                 </tr>
-                            })}
+                            })} */}
+                            <tr>
+                                <td id='cut' >1stCut</td>
+                                <td id='angle' >{recipeDetails.firstCut1}</td>
+                                <td id='width' >{recipeDetails.firstCut2}</td>
+                            </tr>
+                            <tr>
+                                <td id='cut' >2ndCut</td>
+                                <td id='angle' >{recipeDetails.secondCut1}</td>
+                                <td id='width' >{recipeDetails.secondCut2}</td>
+                            </tr>
+                            <tr>
+                                <td id='cut' >3rdCut</td>
+                                <td id='angle' >{recipeDetails.thirdCut1}</td>
+                                <td id='width' >{recipeDetails.thirdCut2}</td>
+                            </tr>
+
                         </tbody>
                     </table>
                 </div>

@@ -7,7 +7,7 @@
 }
 
 /* whole-content */
-.whole-content{
+.whole-content {
   width: 1000px;
 }
 
@@ -35,25 +35,25 @@
 .shift-elements {
   padding: 20px;
   border-style: solid;
-  
+
 }
 
-#plan{
+#plan {
   color: green;
   font-weight: 600;
-  font-size:larger;
+  font-size: larger;
   text-align: center;
 }
 
-#complete{
+#complete {
   color: red;
   font-weight: 400;
-  font-size:medium;
+  font-size: medium;
   text-align: center;
 }
 
-#targetAchieve{
-  color:brown;
+#targetAchieve {
+  color: brown;
   font-size: larger;
   font-weight: 500;
   text-align: center;
@@ -68,12 +68,11 @@
 .name-list {
   margin: 10px;
   margin-top: 15px;
-  color:brown;
+  color: brown;
   font-weight: 600;
 }
 
-.shift-elements 
-table,
+.shift-elements table,
 th,
 td {
   /* border: 1px solid black; */
@@ -112,52 +111,56 @@ td {
   justify-content: space-between;
 }
 
-.recipe-details-elements{
+.recipe-details-elements {
   margin-left: 30px;
 }
 
-.recipe-details-elements span{
+.recipe-details-elements span {
   font-size: x-large;
   font-weight: 500;
 }
 
-.recipe-details-elements p{
+.recipe-details-elements p {
   display: flex;
   margin-left: 20px;
   font-size: x-large;
   font-weight: 400;
 }
 
-.recipe-details-table{
+.recipe-details-table {
   margin-right: 50px;
-  
+
 }
 
-.recipe-details-table  th, td {
+.recipe-details-table th,
+td {
   padding: 20px;
   border: none;
   text-align: center;
 }
 
-#angle{
-color: red;
-font-weight: 700;
+#angle {
+  color: red;
+  font-weight: 700;
 }
-#width{
-color: green;
-font-weight: 700;
+
+#width {
+  color: green;
+  font-weight: 700;
 }
-#cut{
+
+#cut {
   font-weight: 700;
 }
 
 /* visualization */
-.visualization{
+.visualization {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.visualization-elements{
+
+.visualization-elements {
   display: flex;
   width: 1000px;
   justify-content: space-around;
@@ -166,11 +169,11 @@ font-weight: 700;
 
 /* hourBasedProduction */
 
-.hourBasedProduction{
+.hourBasedProduction {
   width: 450px;
 }
 
-.hourBasedProduction-heading{
+.hourBasedProduction-heading {
   display: block;
   /* margin: 20px; */
   /* width: 1000px; */
@@ -184,7 +187,7 @@ font-weight: 700;
 
 
 /* machineDownTime */
-.machineDownTime-heading{
+.machineDownTime-heading {
   display: block;
   /* margin: 20px; */
   /* width: 1000px; */
@@ -195,12 +198,12 @@ font-weight: 700;
   background-color: rgb(10, 116, 236);
 }
 
-.machineDownTime{
+.machineDownTime {
   width: 450px;
 }
 
 /* MachineLossTime-heading */
-.MachineLossTime-heading{
+.MachineLossTime-heading {
   display: block;
   /* margin: 20px; */
   /* width: 1000px; */
@@ -210,13 +213,14 @@ font-weight: 700;
   color: pink;
   background-color: rgb(10, 116, 236);
 }
-.machineLossTime{
+
+.machineLossTime {
   width: 450px;
   /* height:500px */
 }
 
 /* machineLossTime */
-.machineLossTime{
+.machineLossTime {
   display: flex;
   margin: 20px;
   width: 450px;
@@ -226,8 +230,20 @@ font-weight: 700;
 }
 
 /* visualization-machineLossTime */
-.visualization-machineLossTime{
+.visualization-machineLossTime {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* time */
+.time {
+  width: 1000px;
+  display: flex;
+  flex-direction: row-reverse;
+  /* display: block; */
+  margin: 10px 0px 5px 5px;
+  font-size: larger;
+  color: tomato;
+  font-weight: 600;
 }

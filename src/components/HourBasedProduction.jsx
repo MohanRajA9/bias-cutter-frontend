@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Line } from 'react-chartjs-2'
 import {
     Chart as Chartjs,
@@ -25,6 +25,9 @@ Chartjs.register(
 
 function HourBasedProduction() {
 
+    const [array, setArray] = useState([0,1,2.8])
+    // console.log(array)
+
     const options = {}
 
     const data = {
@@ -44,7 +47,7 @@ function HourBasedProduction() {
         datasets:[
             {
                 label:"Completed",
-                data:[0,2,2.8,4,5,6.8,7.9,10],
+                data:array,
                 borderColor: "red"
             }
         ]

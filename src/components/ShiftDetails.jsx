@@ -3,25 +3,50 @@ import { URL } from '../global';
 import axios from 'axios';
 function ShiftDetails() {
     const [shiftDetails, setShiftDetails] = useState({})
-    useEffect(() => {
+    
+
+    function fetchShiftDetails(shiftNo) {
         try {
-            axios.get(`${URL}/shift-details/details/1`)
+            axios.get(`${URL}/shift-details/details/${shiftNo}`)
                 .then((res) => {
-                    console.log(res)
+                    // console.log(res)
                     setShiftDetails(res.data)
                 })
         } catch (error) {
             console.error(error.message)
         }
+    }
+
+    useEffect(() => {
+        fetchShiftDetails(1)
     }, [])
-    console.log(shiftDetails.targetAchieve)
+
+    // console.log(shiftDetails.targetAchieve)
+
+    // setTimeout(() => {
+    //     console.log("after two seconds")
+    //     fetchShiftDetails(2)
+    // }, 5000)
+
+
+    //    const shiftInterval = setInterval(()=>{
+//         fetchShiftDetails(2)
+//         console.log("two seconds")
+//     },2000)
+
+//     setTimeout(()=>{
+//         clearInterval(shiftInterval) 
+//     },10000)
+
+    
+
     return (
         <div className='shift-details' >
 
             <div className='shift-elements' >
                 <header>Operator Name</header>
                 <div className='name-list' >
-                    {shiftDetails.operaterName?.map((item, index)=>{
+                    {shiftDetails.operaterName?.map((item, index) => {
                         return <p key={index} >{item}</p>
                     })}
                 </div>
@@ -30,8 +55,8 @@ function ShiftDetails() {
             <div className='shift-elements' >
                 <table><thead>
                     <tr>
-                        <th style={{fontWeight:800, fontSize:"large"}} >Plan</th>
-                        <th style={{fontWeight:800, fontSize:"large"}} >Complete</th>
+                        <th style={{ fontWeight: 800, fontSize: "large" }} >Plan</th>
+                        <th style={{ fontWeight: 800, fontSize: "large" }} >Complete</th>
                     </tr>
                 </thead>
                     <tbody>
@@ -50,12 +75,12 @@ function ShiftDetails() {
 
             <div className='shift-elements' >
                 <header>Total FAB Meters</header>
-                <p style={{marginTop:"30px", textAlign:"center"}} >{shiftDetails.totalFabMeters}</p>
+                <p style={{ marginTop: "30px", textAlign: "center" }} >{shiftDetails.totalFabMeters}</p>
             </div>
 
             <div className='shift-elements' >
                 <header>Machine</header>
-                <p style={{marginTop:"30px", textAlign:"center"}} >{shiftDetails.machine}</p>
+                <p style={{ marginTop: "30px", textAlign: "center" }} >{shiftDetails.machine}</p>
             </div>
 
         </div>

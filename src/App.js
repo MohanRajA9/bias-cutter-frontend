@@ -4,6 +4,7 @@ import tvsMobility from './images/tvsMobility.png';
 import ShiftDetails from './components/ShiftDetails';
 import RecipeDetails from './components/RecipeDetails';
 import Visualization from './components/Visualization';
+import TimeMinutesSeconds from './components/TimeMinutesSeconds';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       </nav>
 
       <div className='whole-content' >
+        <TimeMinutesSeconds/>
         <ShiftDetails />
         <RecipeDetails />
         <Visualization />
